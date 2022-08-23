@@ -2,15 +2,13 @@
 
 # Bash script that transfers a file from our client to a server (home directory):
 
-# Parameters:
+PATH_TO_FILE=$1
 
-($1) The path to the file to be transferred
+IP=$2
 
-($2) The IP of the server we want to transfer the file to
+USERNAME=$3
 
-($3) The username 'scp' connects with
-
-($4) The path to the SSH private key that 'scp' uses
+PATH_TO_SSH_KEY=$4
 
 
 if [ $# -ne 4 ]
@@ -23,7 +21,5 @@ exit
 
 fi
 
-
-
-scp -o StrictHostKeyChecking=no -i $PATH_TO_SSH_KEY $PATH_TO_FILE $USERNAME@$IP:~/
+scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP":~/
 
