@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+# 3. Redirection
+#!/usr/bin/env bash
 # 3. Redirection
 sudo apt-get -y update
 sudo apt-get -y install nginx
@@ -16,3 +19,4 @@ echo "Ceci n'est pas une page" > /var/www/html/404_not_found.html
 sed -i "/listen 80 default_server;/ a error_page 404 /404_not_found.html;" /etc/nginx/sites-available/default
 
 sudo service nginx restart
+
